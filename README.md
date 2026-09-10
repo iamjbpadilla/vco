@@ -8,9 +8,13 @@
 
 > Build with AI. Verify everything.
 
+## About
+
 VCO is a development operating system and protocol for AI-assisted software engineering. It governs the environment in which AI coding agents operate: scope, requirements, memory, decisions, tasks, and verification.
 
 VCO is **not** an AI model, a coding assistant, a SaaS dashboard, an IDE, or a replacement for your agent or for Git. It is the verification layer around them.
+
+Latest release: [`v0.1.0`](https://github.com/iamjbpadilla/vco/releases/tag/v0.1.0)
 
 ## The model
 
@@ -60,7 +64,7 @@ An agent saying "this should work" is not verification. Evidence comes from obse
 4. Choose a [profile](profiles/).
 5. Point your AI agent at your project's `AGENTS.md` and work through the six modes: `plan → build → test → review → audit → ship`.
 
-## What's in this repository
+## Repository contents
 
 | Path | Purpose |
 | --- | --- |
