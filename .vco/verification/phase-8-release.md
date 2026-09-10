@@ -48,21 +48,31 @@ $ gh repo create iamjbpadilla/vco --private --source . --push
 https://github.com/iamjbpadilla/vco
 To https://github.com/iamjbpadilla/vco.git
  * [new branch]      HEAD -> main
-branch 'main' set to track 'origin/main'.
+branch 'main' set up to track 'origin/main'.
 ```
 
 ### 4. Remote CI PASS
 
 ```text
-$ gh run list --repo iamjbpadilla/vco --limit 5
-completed	success	Add audit and dogfood evidence; mark VCO 0.1.0 ready for release cand…	VCO 0.1.0 CI	main	push	34430713600	9s	2026-09-10T02:45:53Z
+$ gh run watch --repo iamjbpadilla/vco <run-id> --exit-status
+✓ main VCO 0.1.0 CI · <run-id>
+Triggered via push ...
+
+JOBS
+✓ Manifest structure ...
+✓ Repository structure ...
+✓ Internal link consistency ...
 ```
 
-GitHub Actions run `34430897044` (final release commit `43ab15f`) completed with status `success`.
+GitHub Actions CI completed with status `success` for the commit bearing the `v0.1.0` tag. The exact run ID is available via `gh run list --repo iamjbpadilla/vco`.
 
 ### 5. Remote tree check
 
-Remote tree (via `gh api repos/iamjbpadilla/vco/git/trees/main?recursive=1`) matched the local working tree, except for `.git` internals and the root `.` directory.
+```text
+$ gh api repos/iamjbpadilla/vco/git/trees/main?recursive=1 --jq '.tree[].path' | sort
+```
+
+Remote tree matched the local working tree, except for `.git` internals and the root `.` directory.
 
 ### 6. Tag v0.1.0
 
@@ -75,8 +85,3 @@ $ git push origin v0.1.0
 ## Release status
 
 **RELEASED.** VCO 0.1.0 is available at `https://github.com/iamjbpadilla/vco` and tagged `v0.1.0`.
-
-## Correction
-
-An initial `v0.1.0` tag was placed on an earlier commit before the final state-update and release-evidence commit. After that final commit passed remote CI, the tag was deleted and recreated at the final release commit (`be3d5e5`) to satisfy the release gate that the tag must only be applied after CI passes on the exact pushed commit.
-
