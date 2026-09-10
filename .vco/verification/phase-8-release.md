@@ -75,3 +75,8 @@ $ git push origin v0.1.0
 ## Release status
 
 **RELEASED.** VCO 0.1.0 is available at `https://github.com/iamjbpadilla/vco` and tagged `v0.1.0`.
+
+## Correction
+
+An initial `v0.1.0` tag was placed on an earlier commit before the final state-update and release-evidence commit. After that final commit passed remote CI, the tag was deleted and recreated at the final release commit (`be3d5e5`) to satisfy the release gate that the tag must only be applied after CI passes on the exact pushed commit.
+
