@@ -1,0 +1,32 @@
+name: VCO 0.1.0 CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  manifest:
+    name: Manifest structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate VCO manifest and state
+        run: python3 .github/scripts/validate.py
+
+  structure:
+    name: Repository structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required file tree
+        run: python3 .github/scripts/validate.py --structure
+
+  links:
+    name: Internal link consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check internal markdown links
+        run: python3 .github/scripts/validate.py --links
