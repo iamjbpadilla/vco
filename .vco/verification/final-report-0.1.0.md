@@ -130,8 +130,8 @@ Evidence: templates/ are self-explanatory with placeholders
 Verification: .vco/verification/dogfood-0.1.0.md
 
 REQ-011 PASS
-Evidence: GitHub Actions CI on commit 2837119 (tag v0.1.0) completed with status success
-Verification: gh run watch --repo iamjbpadilla/vco 34430992463 --exit-status
+Evidence: GitHub Actions CI on the commit bearing the v0.1.0 tag completed with status success
+Verification: gh run watch --repo iamjbpadilla/vco <run-id> --exit-status (run ID listed in phase-8-release.md)
 
 REQ-012 PASS
 Evidence: No vendor-specific commands in core rules; docs/agent-compatibility.md present
@@ -175,8 +175,8 @@ $ git status --short
 ### Remote
 
 ```text
-$ gh run watch --repo iamjbpadilla/vco 34430992463 --exit-status
-✓ main VCO 0.1.0 CI · 34430992463
+$ gh run watch --repo iamjbpadilla/vco <run-id> --exit-status
+✓ main VCO 0.1.0 CI · <run-id>
 ✓ Manifest structure
 ✓ Repository structure
 ✓ Internal link consistency
@@ -200,7 +200,7 @@ See `.vco/verification/dogfood-0.1.0.md`.
 - MIT License is acceptable for a package intended to be copied into other projects. CONFIRMED by author (me, as implementation agent, per plan).
 - `assets/logo.png` is the official logo copied from `~/Downloads/ChatGPT Image Sep 10, 2026, 09_51_25 AM.png`. CONFIRMED by visual match to the attachment.
 - No PyYAML locally; GitHub Actions is the authoritative YAML validator. CONFIRMED by remote CI success.
-- `v0.1.0` tag points to commit `2837119`, which passed remote CI. A later documentation commit (`1376aaf`) updates requirement evidence references and did not alter the package content.
+- `v0.1.0` tag points to the final release commit, which passed remote CI. The exact commit and run ID are available via `git log` and `gh run list`.
 
 ## UNKNOWN
 
