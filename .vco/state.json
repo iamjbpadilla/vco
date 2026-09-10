@@ -1,0 +1,37 @@
+{
+  "vco": {
+    "version": "0.1.0"
+  },
+  "project": {
+    "name": "VCO",
+    "profile": "internal-tool"
+  },
+  "phase": "release-candidate",
+  "current_focus": "complete validation, audit, dogfood, and release",
+  "completed_areas": [
+    "core-identity-docs",
+    "rules",
+    "templates",
+    "skills",
+    "profiles",
+    "docs",
+    "github-ci",
+    "packages-cli-spec"
+  ],
+  "active_tasks": [
+    "validate",
+    "audit",
+    "dogfood",
+    "release"
+  ],
+  "blockers": [],
+  "unknowns": [],
+  "last_verified": null,
+  "next_steps": [
+    "run validate.py locally",
+    "produce audit report",
+    "produce dogfood acceptance record",
+    "push to GitHub and confirm CI green",
+    "tag v0.1.0"
+  ]
+}

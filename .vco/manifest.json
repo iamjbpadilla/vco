@@ -1,0 +1,14 @@
+{
+  "vco": {
+    "version": "0.1.0"
+  },
+  "project": {
+    "name": "VCO",
+    "profile": "internal-tool",
+    "description": "Verity Coding OS: a development operating system and protocol for AI-assisted software engineering"
+  },
+  "author": {
+    "name": "Jubet M. Padilla",
+    "title": "Systems Engineer • AI Specialist"
+  }
+}
