@@ -58,7 +58,7 @@ $ gh run list --repo iamjbpadilla/vco --limit 5
 completed	success	Add audit and dogfood evidence; mark VCO 0.1.0 ready for release cand…	VCO 0.1.0 CI	main	push	34430713600	9s	2026-09-10T02:45:53Z
 ```
 
-GitHub Actions run `34430713600` completed with status `success`.
+GitHub Actions run `34430897044` (final release commit `43ab15f`) completed with status `success`.
 
 ### 5. Remote tree check
 
