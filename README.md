@@ -56,11 +56,25 @@ CONFIDENCE ≠ EVIDENCE
 
 An agent saying "this should work" is not verification. Evidence comes from observable results: typecheck output, test results, build logs, review records. VCO separates `IMPLEMENTED` from `VERIFIED`, and evidence produces PASS — never the other way around.
 
+## Get it
+
+No package manager install is needed for VCO 0.1. It is a file-based protocol.
+
+```bash
+git clone https://github.com/iamjbpadilla/vco.git
+cd vco
+
+# Copy templates and the .vco skeleton into your project
+cp templates/* /path/to/my-project/
+mkdir -p /path/to/my-project/.vco/{decisions,context,verification}
+cp .vco/manifest.json /path/to/my-project/.vco/
+```
+
 ## Quickstart
 
 1. Read the [Getting Started guide](docs/getting-started.md).
-2. Copy the files in [`templates/`](templates/) into your project root.
-3. Create `.vco/manifest.json` (schema in [docs/architecture.md](docs/architecture.md)).
+2. Edit the templates you copied into your project.
+3. Create `.vco/manifest.json` for your project (schema in [docs/architecture.md](docs/architecture.md)).
 4. Choose a [profile](profiles/).
 5. Point your AI agent at your project's `AGENTS.md` and work through the six modes: `plan → build → test → review → audit → ship`.
 
