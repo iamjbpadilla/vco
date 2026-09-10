@@ -131,7 +131,10 @@ def validate_manifest() -> None:
         except json.JSONDecodeError as exc:
             fail(f"state.json is not valid JSON: {exc}")
 
-    # Consistency checks
+    # Consistency checks: the version in the manifest must also appear in
+    # README and CHANGELOG where the package version is stated. We do not
+    # scan every Markdown file because templates and docs may legitimately
+    # reference other version strings (e.g. Keep a Changelog format spec).
     for path in [ROOT / "README.md", ROOT / "CHANGELOG.md"]:
         text = path.read_text()
         if version not in text:
