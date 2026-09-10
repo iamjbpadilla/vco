@@ -4,13 +4,7 @@ A task is `VERIFIED` only when its evidence is recorded in `.vco/verification/`.
 
 ## Active
 
-| Task | REQ | Status | Owner | Evidence |
-| --- | --- | --- | --- | --- |
-| Run validate.py (manifest, structure, links) | REQ-009, REQ-011 | TODO | — | — |
-| Produce §33 audit record | REQ-014 | TODO | — | — |
-| Produce §34 dogfood acceptance review | REQ-014 | TODO | — | — |
-| Push to GitHub and confirm CI green | REQ-011, REQ-014 | TODO | — | — |
-| Tag v0.1.0 after CI pass | REQ-015 | TODO | — | — |
+None. VCO 0.1.0 is released.
 
 ## Done (VERIFIED)
 
@@ -23,4 +17,9 @@ A task is `VERIFIED` only when its evidence is recorded in `.vco/verification/`.
 | Add profiles (6) | REQ-007, REQ-008 | git commits |
 | Add docs (5 incl. getting-started) | REQ-004, REQ-005, REQ-013, REQ-016 | git commits |
 | Add GitHub CI and validator | REQ-009, REQ-011 | git commit ef2894 |
-| Add dogfood layer | REQ-014 | git commit (pending) |
+| Add dogfood layer | REQ-014 | git commit 4b3c599 |
+| Local validation | REQ-009, REQ-011 | `.vco/verification/phase-5-local-validation.md` |
+| §33 audit | REQ-014 | `.vco/verification/audit-0.1.0.md` |
+| §34 dogfood review | REQ-014 | `.vco/verification/dogfood-0.1.0.md` |
+| Push to GitHub and confirm CI green | REQ-011, REQ-014 | `.vco/verification/phase-8-release.md` |
+| Tag v0.1.0 | REQ-015 | `.vco/verification/phase-8-release.md` |
